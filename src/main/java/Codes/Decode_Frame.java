@@ -21,7 +21,7 @@ import javax.swing.filechooser.FileFilter;
  */
 public class Decode_Frame extends javax.swing.JFrame {
 
-    private BufferedImage sourceImage=null;
+    private BufferedImage image=null;
 
     /**
      * Creates new form Decode_Frame
@@ -46,9 +46,9 @@ public class Decode_Frame extends javax.swing.JFrame {
         jButtonOpen = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextMessage = new javax.swing.JTextArea();
+        message = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Image"));
 
@@ -63,7 +63,7 @@ public class Decode_Frame extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabelSourceImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelSourceImage, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -88,25 +88,25 @@ public class Decode_Frame extends javax.swing.JFrame {
             }
         });
 
-        jTextMessage.setColumns(20);
-        jTextMessage.setRows(5);
-        jTextMessage.setBorder(javax.swing.BorderFactory.createTitledBorder("Decoded Message"));
-        jScrollPane1.setViewportView(jTextMessage);
+        message.setColumns(20);
+        message.setRows(5);
+        message.setBorder(javax.swing.BorderFactory.createTitledBorder("Decoded Message"));
+        jScrollPane1.setViewportView(message);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -114,32 +114,31 @@ public class Decode_Frame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jButtonOpen, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonDecode, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jButtonOpen, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonDecode, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonDecode, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonOpen, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonDecode, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonOpen, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -181,8 +180,8 @@ private File showFileDialog(final boolean open){
         
         
         try {
-            sourceImage =ImageIO.read(file);
-            ImageIcon img1=new ImageIcon(sourceImage);
+            image =ImageIO.read(file);
+            ImageIcon img1=new ImageIcon(image);
             Image img=img1.getImage();
             Image image=img.getScaledInstance(jLabelSourceImage.getWidth(), jLabelSourceImage.getHeight(),Image.SCALE_DEFAULT);
             ImageIcon i=new ImageIcon(image);
@@ -190,79 +189,72 @@ private File showFileDialog(final boolean open){
             jLabelSourceImage.setIcon(i);
             this.validate();
         } catch (IOException ex) {
+            ex.printStackTrace();
         }
     }//GEN-LAST:event_jButtonOpenActionPerformed
 
     private void jButtonDecodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDecodeActionPerformed
         // TODO add your handling code here:
-        
-        if (sourceImage==null){
-            JOptionPane.showMessageDialog(this, "First Open a Image");
-            return;
-        }
-        int len=extractInteger(sourceImage, 0, 0);
-          byte b[]=new byte[len];
-            for(int i=0;i<len;i++)
-              b[i]=  extractByte(sourceImage, i*8+32, 0);
-            
-            jTextMessage.setText(new String(b));
+         if(image == null){
+         JOptionPane.showMessageDialog(null, "first open a picture");
+         return;
+     }
+    int len = extractInteger(image, 0, 0);
+    byte b[] = new byte[len];
+    for(int i=0; i<len; i++)
+       b[i] = extractByte(image, i*8+32, 0);
+    message.setText(new String(b));
             
     }//GEN-LAST:event_jButtonDecodeActionPerformed
 
     private void jButtonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetActionPerformed
         // TODO add your handling code here:
-                jTextMessage.setText("");
-        sourceImage=null;
+                message.setText("");
+        image=null;
         jLabelSourceImage.setIcon(null);
     }//GEN-LAST:event_jButtonResetActionPerformed
-     private byte extractByte(BufferedImage img, int start, int storageBit){
-                int maxX=img.getWidth(),
-                        maxY=img.getHeight(), startX=start/maxY, startY=start-startX*maxY, count=0;
-                byte b=0;
-                for(int i=startX; i<maxX&&count<8;i++){
-                    for(int j=startY;j<maxY&&count<8;j++){
-                        int rgb=img.getRGB(i,j), bit = getBitValue(rgb, storageBit);
-                        b=(byte) setBitValue(b, count, bit);
-                        count++;
-                    }
-                    
-                }
-                return b;
-                
-            }
+ 
     private int extractInteger(BufferedImage img, int start, int storageBit)
-    {
-         int maxX=img.getWidth(), maxY=img.getHeight(),
-                        startX=start/maxY, startY=start-startX*maxY, count=0;
-                int length=0;
-                for(int i=startX;i<maxX&&count<32;i++){
-                    for(int j=startY;j<maxY&&count<32;j++){
-                        int rgb =img.getRGB(i, j), bit=getBitValue(rgb, storageBit);
-                      length=setBitValue(length, count, bit);
-                        img.setRGB(i, j, rgb);
-                        count++;
-                    }}
-
-        return length;
+    {int maxX = img.getWidth(), maxY = img.getHeight(), 
+       startX = start/maxY, startY = start - startX*maxY, count=0;
+    int length = 0;
+    for(int i=startX; i<maxX && count<32; i++) {
+       for(int j=startY; j<maxY && count<32; j++) {
+          int rgb = img.getRGB(i, j), bit = getBitValue(rgb, storageBit);
+          length = setBitValue(length, count, bit);
+          count++;
+          }
+       }
+    return length;
     }
-    
+       private byte extractByte(BufferedImage img, int start, int storageBit){
+               int maxX = img.getWidth(), maxY = img.getHeight(), 
+       startX = start/maxY, startY = start - startX*maxY, count=0;
+    byte b = 0;
+    for(int i=startX; i<maxX && count<8; i++) {
+       for(int j=startY; j<maxY && count<8; j++) {
+          int rgb = img.getRGB(i, j), bit = getBitValue(rgb, storageBit);
+          b = (byte)setBitValue(b, count, bit);
+          count++;
+          }
+       }
+    return b;
+            }
      
             private int getBitValue(int n, int location){
-                int v=(int)(n & Math.round(Math.pow(2, location)));
-                return v==0?0:1;
-                
+              int v = n & (int) Math.round(Math.pow(2, location));
+    return v==0?0:1;
             }
 
             private int setBitValue(int n, int location, int bit){
-                int toggle =(int)Math.pow(n, location), bv=getBitValue(n, location);
-                if(bv==bit)
-                    return n;
-                if(bv==0 && bit==1)
-                    n|=toggle;
-                else if(bv==1&&bit==0)
-                    n^=toggle;
-                
-                return n;
+             int toggle = (int) Math.pow(2, location), bv = getBitValue(n, location);
+    if(bv == bit)
+       return n;
+    if(bv == 0 && bit == 1)
+       n |= toggle;
+    else if(bv == 1 && bit == 0)
+       n ^= toggle;
+    return n;
                     }
     /**
      * 
@@ -308,7 +300,7 @@ private File showFileDialog(final boolean open){
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextMessage;
+    private javax.swing.JTextArea message;
     // End of variables declaration//GEN-END:variables
 
 

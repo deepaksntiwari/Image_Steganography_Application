@@ -9,8 +9,6 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -58,7 +56,7 @@ public class Encode_Frame extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Message"));
 
@@ -252,8 +250,7 @@ private File showFileDialog(final boolean open){
             try {
                 ImageIO.write(EmbeddedImage,Extension.toUpperCase(), file);
             } catch (IOException ex) {
-
-                ex.printStackTrace();            }
+}
 
         }
     }//GEN-LAST:event_jButtonSaveActionPerformed
@@ -290,7 +287,8 @@ private File showFileDialog(final boolean open){
     }//GEN-LAST:event_jButtonEmbedActionPerformed
 
     private void embeddedMessage (BufferedImage img, String mess ){
-        
+                    JOptionPane.showMessageDialog(this, new String (mess));
+
         int messageLength=mess.length();
         int imageWidth=img.getWidth(),imageHeight=img.getHeight(),imageSize=imageHeight*imageWidth;
         if(messageLength*8+32>imageSize){
