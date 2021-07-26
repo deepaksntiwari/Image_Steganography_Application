@@ -287,7 +287,6 @@ private File showFileDialog(final boolean open){
     }//GEN-LAST:event_jButtonEmbedActionPerformed
 
     private void embeddedMessage (BufferedImage img, String mess ){
-                    JOptionPane.showMessageDialog(this, new String (mess));
 
         int messageLength=mess.length();
         int imageWidth=img.getWidth(),imageHeight=img.getHeight(),imageSize=imageHeight*imageWidth;
